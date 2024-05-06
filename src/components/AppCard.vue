@@ -11,7 +11,7 @@ export default {
 
 <template>
     <!-- card -->
-    <div class="card ms-border-none">
+    <div class="card ms-border-none bg-transparent">
         <!-- img -->
         <img :src="`${cardObj.image}`" class="card-img-top rounded-circle" style="width: 18rem" alt="...">
         <!-- section text -->
