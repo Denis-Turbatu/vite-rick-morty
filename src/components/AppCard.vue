@@ -11,16 +11,20 @@ export default {
 
 <template>
     <!-- card -->
-    <div class="card">
+    <div class="card ms-border-none">
         <!-- img -->
-        <img src="..." class="card-img-top" alt="...">
+        <img :src="`${cardObj.image}`" class="card-img-top rounded-circle" style="width: 18rem" alt="...">
         <!-- section text -->
         <div class="card-body">
-            <p class="card-text">{{cardObj.name}}</p>
+            <h2 class="card-text text-center">{{cardObj.name}}</h2>
+            <p class="card-text text-center my-0">{{cardObj.status}}</p>
+            <p class="card-text text-center">{{cardObj.species}}</p>
         </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
-
+    .ms-border-none{
+        border: none;
+    }
 </style>
