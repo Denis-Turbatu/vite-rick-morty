@@ -1,15 +1,21 @@
 <script>
-import AppCard from './components/AppCard.vue'
+import AppCardList from './components/AppCardList.vue'
+import axios from "axios";
 
 export default {
   components:{
-    AppCard,
-  }
+    AppCardList,
+  },
+  data() {
+    return {
+      
+    }
+  },
 }
 </script>
 
 <template>
-  <AppCard />
+    <AppCardList />
 </template>
 
 <style lang="scss" scoped>
