@@ -8,14 +8,20 @@ export default {
   },
   data() {
     return {
-      
+      cardArray: [],
     }
+  },
+  created(){
+    axios.get("https://rickandmortyapi.com/api/character").then((resp) => {
+      this.cardArray = resp.data.results;
+      console.log(this.cardArray);
+    })
   },
 }
 </script>
 
 <template>
-    <AppCardList />
+    <AppCardList :cardArray="cardArray" />
 </template>
 
 <style lang="scss" scoped>

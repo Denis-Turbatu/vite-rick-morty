@@ -3,7 +3,13 @@ import AppCard from './AppCard.vue'
 export default {
     components: {
         AppCard,
-    }
+    },
+    props: {
+        cardArray: Array,
+    },
+    data() {
+        return {};
+    },
 }
 </script>
 
@@ -13,8 +19,10 @@ export default {
         <!-- title -->
         <h1 class="w-50 mx-auto text-center my-5">Rick and Morty App</h1>
         <!-- cards -->
-        <div class="row d-flex flex-wrap col-12 gap-3 justify-content-center">
-            <AppCard class="col-3"/>
+        <div class="row gap-3 justify-content-center">
+            <div class="col" v-for="card in cardArray">
+                <AppCard :cardObj="card"/>
+            </div>
         </div>
     </div>
 </template>
