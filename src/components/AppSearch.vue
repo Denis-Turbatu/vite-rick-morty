@@ -11,7 +11,7 @@ export default {
 </script>
 
 <template>
-    <select @change="$emit('filter')">
+    <select @change="$emit('filter')" v-model="store.selectedStatus">
         <option :value="state" v-for="state in status" >{{state}}</option>
     </select>
 </template>
