@@ -11,8 +11,6 @@ export default {
   data() {
     return {
       cardArray: [],
-      store,
-      status: ["Alive", "Dead", "unknown"]
     }
   },
   created(){
@@ -21,11 +19,16 @@ export default {
       console.log(this.cardArray);
     })
   },
+  methods: {
+    getStatus() {
+      
+    }
+  }
 }
 </script>
 
 <template>
-    <AppSearch />
+    <AppSearch @filter="getStatus"/>
     <AppCardList :cardArray="cardArray" />
 </template>
 

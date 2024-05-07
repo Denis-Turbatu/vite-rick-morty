@@ -1,12 +1,18 @@
 <script>
+import {store} from "../store";
 export default {
-    
+    data(){
+        return{
+            store,
+            status: ["Alive", "Dead", "unknown"],
+        }
+    }
 }
 </script>
 
 <template>
-    <select name="" id="">
-        <option value="" v-for="" ></option>
+    <select @change="$emit('filter')">
+        <option :value="state" v-for="state in status" >{{state}}</option>
     </select>
 </template>
 
