@@ -1,14 +1,18 @@
 <script>
-import AppCardList from './components/AppCardList.vue'
+import AppCardList from './components/AppCardList.vue';
+import AppSearch from './components/AppSearch.vue';
 import axios from "axios";
 
 export default {
   components:{
     AppCardList,
+    AppSearch,
   },
   data() {
     return {
       cardArray: [],
+      store,
+      status: ["Alive", "Dead", "unknown"]
     }
   },
   created(){
@@ -21,6 +25,7 @@ export default {
 </script>
 
 <template>
+    <AppSearch />
     <AppCardList :cardArray="cardArray" />
 </template>
 
