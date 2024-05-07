@@ -1,6 +1,7 @@
 <script>
 import AppCardList from './components/AppCardList.vue';
 import AppSearch from './components/AppSearch.vue';
+import {store} from "./store";
 import axios from "axios";
 
 export default {
@@ -11,6 +12,7 @@ export default {
   data() {
     return {
       cardArray: [],
+      store,
     }
   },
   created(){
@@ -21,7 +23,10 @@ export default {
   },
   methods: {
     getStatus() {
-      
+      axios.get("https://rickandmortyapi.com/api/character", {params: {status: this.store.selectedStatus}}).then((resp) => {
+      this.cardArray = resp.data.results;
+      console.log(this.cardArray);
+    })
     }
   }
 }
